@@ -1,0 +1,10 @@
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\bin\Debug\Jogo.exe.config
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\bin\Debug\Jogo.exe
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\bin\Debug\Jogo.pdb
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.csprojResolveAssemblyReference.cache
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.frmMuseumverna.resources
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.Properties.Resources.resources
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.csproj.GenerateResource.Cache
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.exe
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.pdb
+C:\Users\V.Hoyer\OneDrive\programas\C#\Jogo\Jogo\obj\Debug\Jogo.Sperm.resources
