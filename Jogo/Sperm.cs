@@ -12,6 +12,15 @@ namespace Jogo
 {
     public partial class Sperm : Form
     {
+        string[] placar = new string[] 
+        {
+            "Criador da cura do câncer","Melhor que o Tarantino",
+            "Proximo Miquelangelo","Ganhador do Nobel","Outro Eistein",
+            "Outro Hitler","Raquel","Outro Avilmar","Gandalf",
+            "Pessoa que ama java","Um Bombeiro","Outro Bombeiro",
+            "Aluno de Web","Ganhador do Oscar"
+        }
+      
         public Sperm()
         {
             InitializeComponent();
