@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbSpermMain = new System.Windows.Forms.PictureBox();
             this.btnNadar1 = new System.Windows.Forms.Button();
             this.btnNadar2 = new System.Windows.Forms.Button();
-            this.lstPosition = new System.Windows.Forms.ListBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pgsBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.tmr = new System.Windows.Forms.Timer(this.components);
+            this.dgvPosition = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpermMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // pbSpermMain
@@ -52,7 +55,7 @@
             // 
             this.btnNadar1.Location = new System.Drawing.Point(36, 334);
             this.btnNadar1.Name = "btnNadar1";
-            this.btnNadar1.Size = new System.Drawing.Size(65, 111);
+            this.btnNadar1.Size = new System.Drawing.Size(91, 111);
             this.btnNadar1.TabIndex = 1;
             this.btnNadar1.Text = "Nadar";
             this.btnNadar1.UseVisualStyleBackColor = true;
@@ -60,29 +63,22 @@
             // 
             // btnNadar2
             // 
-            this.btnNadar2.Location = new System.Drawing.Point(445, 334);
+            this.btnNadar2.Location = new System.Drawing.Point(419, 334);
             this.btnNadar2.Name = "btnNadar2";
-            this.btnNadar2.Size = new System.Drawing.Size(65, 111);
+            this.btnNadar2.Size = new System.Drawing.Size(91, 111);
             this.btnNadar2.TabIndex = 2;
             this.btnNadar2.Text = "Nadar";
             this.btnNadar2.UseVisualStyleBackColor = true;
             this.btnNadar2.Visible = false;
             this.btnNadar2.Click += new System.EventHandler(this.btnNadar2_Click);
             // 
-            // lstPosition
+            // pgsBar
             // 
-            this.lstPosition.FormattingEnabled = true;
-            this.lstPosition.Location = new System.Drawing.Point(578, 18);
-            this.lstPosition.Name = "lstPosition";
-            this.lstPosition.Size = new System.Drawing.Size(167, 446);
-            this.lstPosition.TabIndex = 3;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(36, 7);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(474, 23);
-            this.progressBar1.TabIndex = 4;
+            this.pgsBar.Location = new System.Drawing.Point(36, 7);
+            this.pgsBar.Maximum = 167;
+            this.pgsBar.Name = "pgsBar";
+            this.pgsBar.Size = new System.Drawing.Size(474, 23);
+            this.pgsBar.TabIndex = 4;
             // 
             // label1
             // 
@@ -95,6 +91,26 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Progresso";
             // 
+            // tmr
+            // 
+            this.tmr.Enabled = true;
+            this.tmr.Interval = 1000;
+            this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
+            // 
+            // dgvPosition
+            // 
+            this.dgvPosition.AllowUserToAddRows = false;
+            this.dgvPosition.AllowUserToDeleteRows = false;
+            this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPosition.Location = new System.Drawing.Point(578, 18);
+            this.dgvPosition.Name = "dgvPosition";
+            this.dgvPosition.ReadOnly = true;
+            this.dgvPosition.RowHeadersVisible = false;
+            this.dgvPosition.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvPosition.Size = new System.Drawing.Size(301, 446);
+            this.dgvPosition.TabIndex = 6;
+            this.dgvPosition.TabStop = false;
+            // 
             // Sperm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -102,16 +118,17 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Jogo.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(757, 487);
+            this.ClientSize = new System.Drawing.Size(891, 487);
+            this.Controls.Add(this.dgvPosition);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.lstPosition);
+            this.Controls.Add(this.pgsBar);
             this.Controls.Add(this.btnNadar2);
             this.Controls.Add(this.btnNadar1);
             this.Controls.Add(this.pbSpermMain);
             this.Name = "Sperm";
             this.Text = "Sperm";
             ((System.ComponentModel.ISupportInitialize)(this.pbSpermMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,8 +139,9 @@
         private System.Windows.Forms.PictureBox pbSpermMain;
         private System.Windows.Forms.Button btnNadar1;
         private System.Windows.Forms.Button btnNadar2;
-        private System.Windows.Forms.ListBox lstPosition;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pgsBar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer tmr;
+        private System.Windows.Forms.DataGridView dgvPosition;
     }
 }
