@@ -15,13 +15,14 @@ namespace Jogo
     {
         string[] placar = new string[]
         {
-            "Você", "Criador da cura do câncer","Melhor que o Tarantino",
+            "Você", "Criador da cura do AIDS","Melhor que o Tarantino",
             "Proximo Miquelangelo","Ganhador do Nobel","Outro Eistein",
             "Outro Hitler","Raquel","Outro Avilmar","Gandalf",
             "Pessoa que ama java","Um Bombeiro","Outro Bombeiro",
             "Aluno de Web","Ganhador do Oscar"
         };
         Placar plc;
+        string[] placarstr;
 
         //227; 292 >> 227; 125 (167)
 
@@ -52,7 +53,7 @@ namespace Jogo
                 btnNadar2.Visible = false; 
                 pbSpermMain.Location = new Point(227, 125);
                 pgsBar.Value = pgsBar.Maximum;
-                MessageBox.Show("Ganhou!", "Ganhou!");
+                MessageBox.Show("Parabêns, você acaba de ganhar o direito de nascer!", "Ganhou!");
             }
         }
 
@@ -92,6 +93,7 @@ namespace Jogo
                 int step = rnd.Next(9) + 1;
                 plc.table.Rows[i][1] = Convert.ToInt32(plc.table.Rows[i][1]) + step;
             }
+            placarstr = plc.table.Select("SELECT Nome FROM table ORDER BY Valor");
         }
     }
 }
