@@ -35,9 +35,9 @@
             this.pgsBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.tmr = new System.Windows.Forms.Timer(this.components);
-            this.dgvPosition = new System.Windows.Forms.DataGridView();
+            this.dgvPlacar = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpermMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlacar)).BeginInit();
             this.SuspendLayout();
             // 
             // pbSpermMain
@@ -97,19 +97,13 @@
             this.tmr.Interval = 1000;
             this.tmr.Tick += new System.EventHandler(this.tmr_Tick);
             // 
-            // dgvPosition
+            // dgvPlacar
             // 
-            this.dgvPosition.AllowUserToAddRows = false;
-            this.dgvPosition.AllowUserToDeleteRows = false;
-            this.dgvPosition.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPosition.Location = new System.Drawing.Point(578, 18);
-            this.dgvPosition.Name = "dgvPosition";
-            this.dgvPosition.ReadOnly = true;
-            this.dgvPosition.RowHeadersVisible = false;
-            this.dgvPosition.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvPosition.Size = new System.Drawing.Size(301, 446);
-            this.dgvPosition.TabIndex = 6;
-            this.dgvPosition.TabStop = false;
+            this.dgvPlacar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlacar.Location = new System.Drawing.Point(555, 7);
+            this.dgvPlacar.Name = "dgvPlacar";
+            this.dgvPlacar.Size = new System.Drawing.Size(231, 468);
+            this.dgvPlacar.TabIndex = 6;
             // 
             // Sperm
             // 
@@ -118,8 +112,8 @@
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImage = global::Jogo.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(891, 487);
-            this.Controls.Add(this.dgvPosition);
+            this.ClientSize = new System.Drawing.Size(797, 487);
+            this.Controls.Add(this.dgvPlacar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pgsBar);
             this.Controls.Add(this.btnNadar2);
@@ -128,7 +122,7 @@
             this.Name = "Sperm";
             this.Text = "Sperm";
             ((System.ComponentModel.ISupportInitialize)(this.pbSpermMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPosition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlacar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,6 +136,6 @@
         private System.Windows.Forms.ProgressBar pgsBar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer tmr;
-        private System.Windows.Forms.DataGridView dgvPosition;
+        private System.Windows.Forms.DataGridView dgvPlacar;
     }
 }
