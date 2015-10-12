@@ -64,6 +64,10 @@ namespace Jogo
 
         private void btnNadar1_Click(object sender, EventArgs e)
         {
+            if (!tmr.Enabled)
+            {
+                tmr.Start();
+            }
             pbSpermMain.Image = Jogo.Properties.Resources.sperm1;
             btnNadar1.Visible = false;
             btnNadar2.Visible = true;
@@ -81,35 +85,41 @@ namespace Jogo
 
         private void tmr_Tick(object sender, EventArgs e)
         {
-            int pos = pbSpermMain.Location.Y;
+            int pos = pbSpermMain.Location.Y, nextStep = 3;
+            string winners = ""; 
 
             //controla a correnteza, nem sei se é assim que escreve...
             if (pos <= 125)
             {
                 tmr.Stop();
             }
-            if (pos + 2 < 292)
+            if (pos + nextStep < 292)
             {
-                pgsBar.Value -= 2;
+                pgsBar.Value -= nextStep;
                 plc.table.Rows[0][1] = pgsBar.Value;
-                pbSpermMain.Location = new Point(227, pbSpermMain.Location.Y + 2);
+                pbSpermMain.Location = new Point(227, pbSpermMain.Location.Y + nextStep);
             }
 
             //Controla o nado dos "npc's" e checka se alguem ganhou 
+            #region "Controla os npc's"
             Random rnd = new Random();
             for (int i = 1; i < plc.table.Rows.Count; i++)
             {
-                int step = rnd.Next(9) + 1;
+                int step = rnd.Next(11) + 1;
                 plc.table.Rows[i][1] = Convert.ToInt32(plc.table.Rows[i][1]) + step;
                 if (Convert.ToInt32(plc.table.Rows[i][1]) > 167)
                 {
                     tmr.Stop();
                     btnNadar1.Visible = false;
                     btnNadar2.Visible = false;
-                    MessageBox.Show("Aparentemente, você acabou de perder. Tente novamente em outra oportunidade!", "Perdeu!");
+                    winners = "um candango";
+                    MessageBox.Show("Aparentemente, você acabou de perder para " + winners + ".\n\nTente novamente em outra oportunidade!", "Perdeu!");
+                    break;
                 }
             }
-            //aqui tem que atualizar o listView, de alguma maneira
+            #endregion
+
+            //aqui tem que atualizar o listView/dataGridView, de alguma maneira
             //dgvPlacar.DataSource = plc.table.Select("SELECT Nome FROM table ORDER BY Valor")
         }
     }
