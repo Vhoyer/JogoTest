@@ -25,14 +25,22 @@ namespace Jogo
         //classe do placar, bem óbvio
         Placar plc;
         //variavel de test
-        List<string> plcstr;
+        string[] plcArr;
+        List<string> plclist;
+        DataView dv;
+        DataTable dt;
 
         public Sperm()
         {
             InitializeComponent();
             plc = new Placar(placar);
+            dv = new DataView(plc.table);
 
             //dgvPlacar.DataSource = plc.table.Select(" ");
+            plcArr = (from Jogo in plc.table.AsEnumerable()
+                      orderby plc.table.Columns[1]
+                      select plc.table.Columns[0].ToString()).ToArray();
+            lstbPlacar.DataSource = plcArr;
         }
 
         #region "Nado do protagonista"
@@ -85,7 +93,8 @@ namespace Jogo
 
         private void tmr_Tick(object sender, EventArgs e)
         {
-            int pos = pbSpermMain.Location.Y, nextStep = 3;
+            int pos = pbSpermMain.Location.Y, 
+                nextStep = 3;
             string winners = ""; 
 
             //controla a correnteza, nem sei se é assim que escreve...
@@ -101,6 +110,7 @@ namespace Jogo
             }
 
             //Controla o nado dos "npc's" e checka se alguem ganhou 
+            //--atualizar quando o list estiver pronto;
             #region "Controla os npc's"
             Random rnd = new Random();
             for (int i = 1; i < plc.table.Rows.Count; i++)
@@ -120,7 +130,13 @@ namespace Jogo
             #endregion
 
             //aqui tem que atualizar o listView/dataGridView, de alguma maneira
-            //dgvPlacar.DataSource = plc.table.Select("SELECT Nome FROM table ORDER BY Valor")
+            //EnumerableRowCollection<DataColumn> query =
+
+            plcArr = (from Jogo in plc.table.AsEnumerable()
+             orderby plc.table.Columns[1]
+             select plc.table.Columns[0].ToString()).ToArray();
+            lstbPlacar.DataSource = plcArr;
+
         }
     }
 }

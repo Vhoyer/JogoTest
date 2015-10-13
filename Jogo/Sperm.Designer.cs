@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tmr = new System.Windows.Forms.Timer(this.components);
             this.dgvPlacar = new System.Windows.Forms.DataGridView();
+            this.lstbPlacar = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSpermMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlacar)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +105,14 @@
             this.dgvPlacar.Size = new System.Drawing.Size(231, 468);
             this.dgvPlacar.TabIndex = 6;
             // 
+            // lstbPlacar
+            // 
+            this.lstbPlacar.FormattingEnabled = true;
+            this.lstbPlacar.Location = new System.Drawing.Point(555, 13);
+            this.lstbPlacar.Name = "lstbPlacar";
+            this.lstbPlacar.Size = new System.Drawing.Size(231, 459);
+            this.lstbPlacar.TabIndex = 7;
+            // 
             // Sperm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +121,7 @@
             this.BackgroundImage = global::Jogo.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(797, 487);
+            this.Controls.Add(this.lstbPlacar);
             this.Controls.Add(this.dgvPlacar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pgsBar);
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer tmr;
         private System.Windows.Forms.DataGridView dgvPlacar;
+        private System.Windows.Forms.ListBox lstbPlacar;
     }
 }
