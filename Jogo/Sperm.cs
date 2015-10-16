@@ -19,10 +19,9 @@ namespace Jogo
             "Proximo Miquelangelo","Ganhador do Nobel","Outro Eistein",
             "Outro Hitler","Raquel","Outro Avilmar","Gandalf",
             "Pessoa que ama java","Um Bombeiro","Outro Bombeiro",
-            "Aluno de Web","Ganhador do Oscar"
+            "Aluno de Web","Ganhador do Oscar","Um médico"
         };
         Placar plc;
-        string[] placarstr;
 
         //227; 292 >> 227; 125 (167)
 
@@ -31,9 +30,10 @@ namespace Jogo
             InitializeComponent();
             plc = new Placar(placar);
 
-            dgvPosition.DataSource = plc.table;
+            lstPosition.DataSource = plc.Update();
         }
 
+        #region "nado do personagem"
         private void Nadar()
         {
             Random rnd = new Random();
@@ -72,6 +72,7 @@ namespace Jogo
             btnNadar1.Visible = true;
             Nadar();
         }
+        #endregion
 
         private void tmr_Tick(object sender, EventArgs e)
         {
@@ -93,7 +94,8 @@ namespace Jogo
                 int step = rnd.Next(9) + 1;
                 plc.table.Rows[i][1] = Convert.ToInt32(plc.table.Rows[i][1]) + step;
             }
-            placarstr = plc.table.Select("SELECT Nome FROM table ORDER BY Valor");
+
+            lstPosition.DataSource = plc.Update();
         }
     }
 }

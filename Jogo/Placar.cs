@@ -30,5 +30,28 @@ namespace Jogo
                 table.Rows.Add(row);
             }
         }
+
+        public List<string> Update()
+        {
+            List<string> lst = new List<string>();
+            List<string> lst2 = new List<string>();
+            List<int> valor = new List<int>();
+
+            foreach(DataRow row in table.Rows)
+            {
+                lst2.Add(row[0].toString());
+                valor.Add(int.Parse(row[1].toString()));
+            }
+            int l = valor.Count;
+            for(i = 0; i < l; i++)
+            {
+                int index = valor.Find(valor.Max());
+                lst.Add(lst2[index]);
+                lst2.RemoveAt(index);
+                valor.RemoveAt(index);
+            }
+
+            return lst;
+        }
     }
 }
