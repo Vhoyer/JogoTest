@@ -20,15 +20,20 @@ namespace Jogo
             "Proximo Miquelangelo","Ganhador do Nobel","Outro Eistein",
             "Outro Hitler","Raquel","Outro Avilmar","Gandalf",
             "Pessoa que ama java","Um Bombeiro","Outro Bombeiro",
-            "Aluno de Web","Ganhador do Oscar"
+            "Aluno de Web","Ganhador do Oscar","Um médico"
         };
         //classe do placar, bem óbvio
         Placar plc;
+<<<<<<< HEAD
         //variavel de test
         string[] plcArr;
         List<string> plclist;
         DataView dv;
         DataTable dt;
+=======
+
+        //227; 292 >> 227; 125 (167)
+>>>>>>> batente
 
         public Sperm()
         {
@@ -36,6 +41,7 @@ namespace Jogo
             plc = new Placar(placar);
             dv = new DataView(plc.table);
 
+<<<<<<< HEAD
             //dgvPlacar.DataSource = plc.table.Select(" ");
             plcArr = (from Jogo in plc.table.AsEnumerable()
                       orderby plc.table.Columns[1]
@@ -47,6 +53,12 @@ namespace Jogo
         /// <summary>
         /// Controla o "Nado" do esperma =D (não, não foi o marciano)
         /// </summary>
+=======
+            lstPosition.DataSource = plc.Update();
+        }
+
+        #region "nado do personagem"
+>>>>>>> batente
         private void Nadar()
         {
             Random rnd = new Random();
@@ -127,6 +139,7 @@ namespace Jogo
                     break;
                 }
             }
+<<<<<<< HEAD
             #endregion
 
             //aqui tem que atualizar o listView/dataGridView, de alguma maneira
@@ -137,6 +150,10 @@ namespace Jogo
              select plc.table.Columns[0].ToString()).ToArray();
             lstbPlacar.DataSource = plcArr;
 
+=======
+
+            lstPosition.DataSource = plc.Update();
+>>>>>>> batente
         }
     }
 }
